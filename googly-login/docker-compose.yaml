@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  backend:
+    image: googly-login:v1
+    build: .
+    container_name: googly-login-backend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    env_file:
+      - .env
+
+  db:
+    image: postgres:15
+    container_name: googly-db
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: calico_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
