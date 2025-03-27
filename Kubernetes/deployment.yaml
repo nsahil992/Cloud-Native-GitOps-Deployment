@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: googly-login-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: googly-login-app
+  template:
+    metadata:
+      labels:
+        app: googly-login-app
+    spec:
+      containers:
+        - name: googly-login
+          image: nsahil992/googly-login:v1
+          ports:
+            - containerPort: 8080
+          env:
+            - name: DB_HOST
+              value: "postgres-service"
+            - name: DB_USER
+              value: "postgres"
+            - name: DB_PASSWORD
+              value: "password"
+            - name: DB_NAME
+              value: "googly-login"
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
