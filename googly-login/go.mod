@@ -1,4 +1,4 @@
-module calico-go-project
+module googly-login-app
 
 go 1.23.1
 
