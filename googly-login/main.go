@@ -8,8 +8,8 @@ import (
 	"github.com/joho/godotenv"
 	_ "github.com/lib/pq"
 
-	"calico-go-project/database"
-	"calico-go-project/handlers"
+	"googly-login-app/database"
+	"googly-login-app/handlers"
 )
 
 func main() {
