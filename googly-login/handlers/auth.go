@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"net/http"
 
-	"calico-go-project/database"
-	"calico-go-project/models"
-	"calico-go-project/utils"
+	"googly-login-app/database"
+	"googly-login-app/models"
+	"googly-login-app/utils"
 )
 
 // RegisterHandler handles user registration
